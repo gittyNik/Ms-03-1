@@ -1,46 +1,173 @@
-* {
+ /** {
     box-sizing: border-box;
-}
+}*/
 
-.container {
+/*
+For absolute positioning, the child searches for an ancestor which has position: relative style head
+ in its styling
+
+If the search return null, then body is used as reference as body always have position: relative
+style head and is parent to all elements rendered on page
+
+If the search actually return an element which fullfill all conditions the offsets are set w.r.t 
+that ancestor(Doesn't matter where its present on webpage)
+
+This kind of positioning forms a binding relationship between child and ancestor. That means
+if ancestor is moved then child moves as well
+*/
+
+
+.wrapper {
     position: relative;
-    margin: 10px;
-    padding: 55px;
-    border: 1px solid red;
-    
-    height: 400px;
-
-}
-
-.containerDiv {
-    position: relative;
-    padding: 55px;
-    border: 1px solid blue;
+    border: 1px solid pink;
     height: 200px;
-}
-
-.para {
-    position: absolute;
-    top: 70px;
-    left: 50px;
-    border: 1px solid yellow;
+    left: 100px;
+    padding-top: 100px;
 }
 .popup {
     position: relative;
     border: 1px solid blueviolet;
-}
-.wrapper {
-    position: relative;
-    border: 1px solid pink;
-    height: 100px;
 }
 .popup:hover::after {
     position: absolute;
     content: "hi this is popup popping up";
     min-width: 200px;
     border: 1px solid grey;
-    background-color: khaki;
-    top:40px;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: white;
+    padding: 5px;
+    top:20px;
     left: 20px;
-
+    cursor: pointer;
 }
+
+
+/*
+@media (min-width: 768px) {
+    p {
+        color: red;
+    }
+}
+
+@media (min-width: 401px) and (max-width: 767px) {
+    p {
+        color: blue;
+    }
+}
+
+@media (max-width: 400px) {
+    p {
+        color: green;
+    }
+}
+*/
+/*
+@media (max-width: 472px) {
+    .cp {
+        width: 100%;
+        border: 1px solid black;
+        color: blue;
+    }
+}
+
+@media (min-width: 473px) {
+    .cp {
+        width: 50%;
+        border: 1px solid black;
+        color: red;
+    }
+}
+*/
+
+
+
+/*Responsive design: Idea is that while writing a website keep in mind how the
+mobile view will look like. Design it accordingly such that website can adapt
+based on device width of device it is viewed upon.
+
+It is also called mobile first approach.
+
+For this designers first create designs for how tha website will look
+on mobile devices and then how it would look on desktop and laptops
+
+1 website - atleast 3+ device sizes to cover
+
+ways to implement it:
+
+1. Use { %, em, rem } instead of fixed pixel sizes
+2. Use breakpoint with @media queries.*/
+
+
+/*.container {
+    display: flex;
+}
+
+.child {
+    display: flex;
+    
+    height: 100px;
+    background-color: blue;
+    color: white;
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+@keyframes caraosel {
+    from {
+        margin-left: 0px;
+    }
+
+    to {
+        margin-left: -360px;
+    }
+}
+
+@media (max-width: 400px) {
+    .static {
+        overflow-x: hidden;
+        margin-left: 10px;
+    }
+    .container {
+        flex-wrap: nowrap;
+        overflow-x: hidden;
+        animation: caraosel 5s infinite alternate;
+    }
+    .child{
+        min-width: 100px;
+        
+
+    }
+}
+
+@media (min-width: 401px) {
+    .container {
+        flex-wrap: wrap;
+    }
+    .child{
+            min-width: 100px;
+    }
+}*/
+
+/*@media (max-width: 400px) {
+    .child {
+
+        min-width: 88%;
+        border: 2px solid blue;
+        padding-left: 10px;
+        margin: 6%;
+    }
+}
+
+@media (min-width: 401px) {
+    .child {
+        min-width: 38%;
+        border: 2px solid blue;
+        padding-left: 10px;
+        margin: 6%;
+    }
+}*/
+
